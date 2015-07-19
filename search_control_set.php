@@ -177,7 +177,15 @@ $ad_other = get_post_meta($post->ID, 'ad_other', true);
 <div>
 </br>
 <label><b>Property Style</b></label>
-	<input type="text" name="ad_property_style" value="<?php echo $ad_property_style ?>"class="widefat">
+	<select id="ad_property_style" name="ad_property_style"  required>
+<option <?php if($ad_property_style=="1/2 Duplex") {echo "selected='selected'";}?>value="1/2 Duplex" >1/2 Duplex</option>
+<option <?php if($ad_property_style=="Condo") {echo "selected='selected'";}?>value="Condo">Condo</option>
+<option <?php if($ad_property_style=="Manufactured/Mobile House") {echo "selected='selected'";}?>value="Manufactured/Mobile House">Manufactured/Mobile House</option>
+<option <?php if($ad_property_style=="Modular") {echo "selected='selected'";}?>value="Modular">Modular</option>
+<option <?php if($ad_property_style=="Single Family House") {echo "selected='selected'";}?>value="Single Family House">Single Family House</option>
+<option <?php if($ad_property_style=="Townhouse") {echo "selected='selected'";}?>value="Townhouse">Townhouse</option>
+<option <?php if($ad_property_style=="Villa") {echo "selected='selected'";}?>value="Villa">Villa</option>
+</select>
 </div>
 <div>
 </br>

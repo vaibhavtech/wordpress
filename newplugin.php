@@ -10,5 +10,6 @@
 include_once('register_post_office.php');
 include_once('register_post_agent.php');
 include_once('search_control_set.php');
+include_once('search_result_set.php');
 include_once('setting_menu.php');
 ?>

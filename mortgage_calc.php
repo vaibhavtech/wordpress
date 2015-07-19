@@ -1,8 +1,6 @@
 <div class="wrap1">
 <h2>Mortgage Calculator</h2>
 <form method="post">
-<?php settings_fields('SavvyIDX_mortgage_calc_group'); ?>
-<?php do_settings_sections('SavvyIDX_mortgage_calc_group'); ?>
 <table class="form-mc">
 <tr valign="top">
 <th scope="row">Enter Down Payment %</th>

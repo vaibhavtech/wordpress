@@ -49,15 +49,33 @@ echo '<input type="hidden" name="eventmeta_noncename" id="eventmeta_noncename" v
 wp_create_nonce( plugin_basename(__FILE__) ) . '" />';
 	// Get the location data if its already been entered
 $location = get_post_meta($post->ID, '_location', true);
-$phn=get_post_meta($post->ID, '_phn', true);
-$fax=get_post_meta($post->ID, '_fax', true);
-$gnemail=get_post_meta($post->ID, '_genemail', true);
-$alogo=get_post_meta($post->ID, '_alogo', true);
+$offc_city = get_post_meta($post->ID, 'offc_city', true);
+$offc_state = get_post_meta($post->ID, 'offc_state', true);
+$offc_contry = get_post_meta($post->ID, 'offc_contry', true);
+$phn = get_post_meta($post->ID, '_phn', true);
+$fax = get_post_meta($post->ID, '_fax', true);
+$gnemail = get_post_meta($post->ID, '_genemail', true);
+$alogo = get_post_meta($post->ID, '_alogo', true);
 // Echo out the field
 ?>
 <div>
 <label><b>Office Address</b></label>
 <textarea  name="_location" value="<?php $location ?>" class="widefat" required> <?php echo $location?></textarea>
+</div>
+<div>
+</br>
+<label><b>City</b></label>
+	<input type="text"  name="offc_city" value="<?php echo $offc_city ?> " class="widefat" required>
+</div>
+<div>
+</br>
+<label><b>State</b></label>
+	<input type="text"  name="offc_state" value="<?php echo $offc_state ?> " class="widefat">
+</div>
+<div>
+</br>
+<label><b>Countery</b></label>
+	<input type="text"  name="offc_contry" value="<?php echo $offc_contry ?> " class="widefat" required>
 </div>
 <div>
 </br>
@@ -99,6 +117,9 @@ return $post->ID;
 $events_meta = array();
 if(isset($_POST['_genemail'])){
 $events_meta['_location'] = $_POST['_location'];
+$events_meta['offc_city'] = $_POST['offc_city'];
+$events_meta['offc_state'] = $_POST['offc_state'];
+$events_meta['offc_contry'] = $_POST['offc_contry'];
 $events_meta['_phn'] = $_POST['_phn'];
 $events_meta['_fax'] = $_POST['_fax'];
 $events_meta['_genemail'] = $_POST['_genemail'];
